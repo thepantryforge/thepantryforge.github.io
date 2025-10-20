@@ -27,16 +27,18 @@ div.header {
     background-color: var(--pf_blue_translucent);
     padding: 25px;
     margin: 0;
+    box-shadow: 0 0 20px #00000060;
+    backdrop-filter: blur(10px);
 }
 
 div.products {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     margin-bottom: 30px;
 }
 
 div.card {
-    background-color: var(--pf_magenta_translucent);
-    border-radius: 30px;
+    background: none;
+    border: none;
     width: auto;
 }
 
@@ -59,6 +61,15 @@ div.footer-2 {
 
 h2 {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+h5.card-title {
+    text-align: center;
+}
+
+p {
+    text-align: center;
 }
 
 p.copyright {
@@ -69,4 +80,26 @@ p.copyright {
 p.ack-country {
     margin-bottom: 0;
     font-size: small;
+}
+
+a.btn-outline-primary {
+    border-color: var(--pf_magenta);
+    color: var(--pf_magenta);
+}
+
+a.btn-outline-primary:hover {
+    background-color: var(--pf_magenta);
+    border-color: var(--pf_magenta);
+}
+
+a.btn-primary {
+    border-color: var(--pf_blue);
+    background-color: var(--pf_blue);
+    color: var(--pf_text);
+}
+
+a.btn-primary:hover {
+    background-color: var(--pf_blue_translucent);
+    border-color: var(--pf_blue_translucent);
+    scale: 105%;
 }
