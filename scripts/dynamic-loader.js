@@ -13,6 +13,7 @@ head.innerHTML += `\
 
 <!-- My CSS -->
 <link href="styles/variables.css" rel="stylesheet">
+<link href="styles/components/hero.css" rel="stylesheet">
 <link href="styles/components/navbar.css" rel="stylesheet">`
 
 // Header & Container
