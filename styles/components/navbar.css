@@ -9,6 +9,13 @@ nav.navbar {
     background-color: var(--pf-navy);
 }
 
+@media (min-width: 768px) {
+    nav.navbar {
+        /* Layout */
+        border-radius: 0 0 2rem 2rem;
+    }
+}
+
 button.navbar-toggler {
     /* Layout */
     --bs-navbar-toggler-padding-y: 25px;
@@ -36,4 +43,10 @@ a.nav-link {
     --bs-nav-link-hover-color: var(--pf-pumpkin);
     --bs-nav-link-disabled-color: blend-color(var(--pf-navy), var(--pf-sky));
     --bs-navbar-active-color: var(--pf-pumpkin);
+}
+
+@media (max-width: 767px) {
+    img.header-image {
+        padding: 15px 0;
+    }
 }
