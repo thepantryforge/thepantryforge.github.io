@@ -1,0 +1,5 @@
+div.paint-bg {
+    background-image: url("/images/apple paint.png");
+    background-size: 100% 100%;
+    padding: 35px 45px 25px 25px;
+}

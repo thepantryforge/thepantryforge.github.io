@@ -14,7 +14,8 @@ head.innerHTML += `\
 <!-- My CSS -->
 <link href="styles/variables.css" rel="stylesheet">
 <link href="styles/components/hero.css" rel="stylesheet">
-<link href="styles/components/navbar.css" rel="stylesheet">`
+<link href="styles/components/navbar.css" rel="stylesheet">
+<link href="styles/components/paint-background.css" rel="stylesheet">`
 
 // Header & Container
 body.innerHTML = `\
