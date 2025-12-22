@@ -13,6 +13,7 @@ head.innerHTML += `\
 
 <!-- My CSS -->
 <link href="styles/variables.css" rel="stylesheet">
+<link href="styles/components/footer.css" rel="stylesheet">
 <link href="styles/components/hero.css" rel="stylesheet">
 <link href="styles/components/navbar.css" rel="stylesheet">
 <link href="styles/components/paint-background.css" rel="stylesheet">`
@@ -25,7 +26,7 @@ body.innerHTML = `\
 // Container & Footer
 body.innerHTML += `\
 </div>
-<div data-include="/components/footer.html"></div>`
+<pf-footer></pf-footer>`
 
 
 
@@ -37,6 +38,15 @@ class PantryForgeHeader extends HTMLElement {
   }
 }
 customElements.define('pf-header', PantryForgeHeader);
+
+class PantryForgeFooter extends HTMLElement {
+  async connectedCallback() {
+    const html = await fetch('/components/footer.html').then(r => r.text());
+    // Add the current year for the copyright
+    this.innerHTML = html.replace("{{CURRENT_YEAR}}", new Date().getFullYear())
+  }
+}
+customElements.define('pf-footer', PantryForgeFooter);
 
 
 
@@ -91,7 +101,7 @@ highlightNavItem();
 
 // Finally, add Bootstrap JS & My JS
 async function addJS() {
-  await waitForElment('div[data-include="/components/footer.html"]')
+  await waitForElment('pf-footer')
 
   const bsScript = document.createElement('script');
   bsScript.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js';

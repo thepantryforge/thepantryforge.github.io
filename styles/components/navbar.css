@@ -30,7 +30,7 @@ button.navbar-toggler {
     --bs-navbar-toggler-focus-width: 0;
 }
 
-a.nav-link {
+nav.navbar a.nav-link {
     /* Layout */
     --bs-nav-link-padding-x: 0;
 

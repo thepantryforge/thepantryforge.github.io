@@ -1,0 +1,18 @@
+footer {
+    /* Colour */
+    background-color: var(--pf-navy);
+    --bs-heading-color: var(--pf-magenta);
+    --bs-secondary-color: var(--pf-apple);
+    --bs-border-color: var(--pf-pumpkin);
+    --bs-link-color-rgb: var(--pf-sky-rgb);
+    --bs-link-hover-color-rgb: var(--pf-pumpkin-rgb);
+    --bs-emphasis-color-rgb: var(--pf-sky-rgb);
+    color: var(--pf-offwhite);
+}
+
+@media (min-width: 768px) {
+    footer {
+        /* Layout */
+        border-radius: 2rem 2rem 0 0;
+    }
+}
