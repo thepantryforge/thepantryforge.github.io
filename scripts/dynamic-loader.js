@@ -88,13 +88,18 @@ highlightNavItem();
 
 
 
-// Finally, add Bootstrap JS
-async function addBootstrapJS() {
+// Finally, add Bootstrap JS & My JS
+async function addJS() {
   await waitForElment('div[data-include="/components/footer.html"]')
-  const script = document.createElement('script');
-  script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js';
-  script.integrity = 'sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI';
-  script.crossOrigin = 'anonymous'
-  document.body.appendChild(script);
+
+  const bsScript = document.createElement('script');
+  bsScript.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js';
+  bsScript.integrity = 'sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI';
+  bsScript.crossOrigin = 'anonymous'
+  document.body.appendChild(bsScript);
+
+  const heroScript = document.createElement('script');
+  heroScript.src = '/scripts/hero.js';
+  document.body.appendChild(heroScript);
 }
-addBootstrapJS();
+addJS();

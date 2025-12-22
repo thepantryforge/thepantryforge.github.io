@@ -1,0 +1,13 @@
+.hero-wrapper {
+  /* background-color: var(--pf-navy); */
+  perspective: 1000px;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
