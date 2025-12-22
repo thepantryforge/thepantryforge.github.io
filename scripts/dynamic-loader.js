@@ -32,7 +32,7 @@ body.innerHTML += `\
 // Add custom components
 class PantryForgeHeader extends HTMLElement {
   async connectedCallback() {
-    const html = await fetch('/components/header.html').then(r => r.text());
+    const html = await fetch('/components/navbar.html').then(r => r.text());
     this.innerHTML = html;
   }
 }
