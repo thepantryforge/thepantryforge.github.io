@@ -13,10 +13,12 @@ head.innerHTML += `\
 
 <!-- My CSS -->
 <link href="styles/variables.css" rel="stylesheet">
+<link href="styles/components/accordion.css" rel="stylesheet">
 <link href="styles/components/footer.css" rel="stylesheet">
 <link href="styles/components/hero.css" rel="stylesheet">
 <link href="styles/components/navbar.css" rel="stylesheet">
-<link href="styles/components/paint-background.css" rel="stylesheet">`
+<link href="styles/components/paint-background.css" rel="stylesheet">
+<link href="styles/components/table.css" rel="stylesheet">`
 
 // Header & Container
 body.innerHTML = `\

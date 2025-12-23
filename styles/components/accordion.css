@@ -1,0 +1,6 @@
+button.accordion-button {
+    --bs-accordion-bg: rgba(var(--pf-sky-rgb), 0.2);
+    --bs-accordion-btn-bg: rgba(var(--pf-sky-rgb), 0.2);
+    --bs-accordion-active-bg: rgba(var(--pf-sky-rgb), 0.2);
+    --bs-accordion-btn-focus-box-shadow: none;
+}

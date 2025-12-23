@@ -1,0 +1,16 @@
+div.table-responsive {
+  max-height: 60vh;     /* required */
+  overflow-y: auto;      /* required */
+}
+
+table.table thead {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+table.table th.h6 {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+}
