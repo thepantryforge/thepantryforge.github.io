@@ -21,11 +21,13 @@ head.innerHTML += `\
 // Header & Container
 body.innerHTML = `\
 <pf-header></pf-header>
-<div class="container">` + body.innerHTML
+<main>
+    <div class="container my-5">` + body.innerHTML
 
 // Container & Footer
 body.innerHTML += `\
-</div>
+    </div>
+</main>
 <pf-footer></pf-footer>`
 
 
