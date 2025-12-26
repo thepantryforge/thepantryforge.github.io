@@ -1,0 +1,8 @@
+a i.bi {
+  display: inline-block;
+  transition: transform 0.15s ease-out;
+}
+
+a i.bi:hover {
+  transform: scale(1.15) rotate(10deg);
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Pantry Forge - Contact Us</title>
+    <meta name="description" content="Contact The Pantry Forge">
+</head>
+
+<body>
+    <h1>Contact Us</h1>
+
+    <p>
+        If you have a problem, question or compliment, feel free to chat to us!
+        <br>
+        <span id="openNow"></span>
+    </p>
+
+
+    <a href="mailto:thepantryforge@gmail.com"><i class="mx-1 display-4 text-dark bi bi-envelope-fill"></i></a>
+    <a href="https://ig.me/m/thepantryforge"><i class="mx-1 display-4 text-dark bi bi-instagram"></i></a>
+    <a href="https://m.me/thepantryforge"><i class="mx-1 display-4 text-dark bi bi-facebook"></i></a>
+    <a href="https://m.me/thepantryforge"><i class="mx-1 display-4 text-dark bi bi-messenger"></i></a>
+
+    <p class="mt-3">
+        Our available hours are as follows:
+    </p>
+
+    <table class="table table-hover mx-auto">
+        <thead>
+            <tr class="table-secondary">
+                <th class="rounded-top-3 rounded-end-0">Day</th>
+                <th class="rounded-top-3 rounded-start-0">Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-group-divider">
+                <th>Sunday</th>
+                <td>12-9pm</td>
+            </tr>
+            <tr>
+                <th>Monday</th>
+                <td>4-9pm</td>
+            </tr>
+            <tr>
+                <th>Tuesday</th>
+                <td>4-9pm</td>
+            </tr>
+            <tr>
+                <th>Wednesday</th>
+                <td>5-9pm</td>
+            </tr>
+            <tr>
+                <th>Thursday</th>
+                <td>4-9pm</td>
+            </tr>
+            <tr>
+                <th>Friday</th>
+                <td>4-6pm</td>
+            </tr>
+            <tr>
+                <th>Saturday</th>
+                <td>9am-9pm</td>
+            </tr>
+
+            <tr class="table-group-divider">
+                <th>Public Holidays</th>
+                <td>9am-9pm</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        These hours are <strong>very</strong> rough and vary from time to time, but it's generally best to message us on weekends.
+    </p>
+
+    <script>
+        function getStoreStatus(schedule) {
+            const now = new Date();
+            const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const today = dayNames[now.getDay()];
+
+            const currentTime = now.getHours() * 60 + now.getMinutes(); // total minutes past midnight
+            const intervals = schedule[today] || [];
+
+            // Check if store is open now
+            for (let interval of intervals) {
+                const [openHour, openMin] = interval.open.split(":").map(Number);
+                const [closeHour, closeMin] = interval.close.split(":").map(Number);
+
+                const openMinutes = openHour * 60 + openMin;
+                const closeMinutes = closeHour * 60 + closeMin;
+
+                if (currentTime >= openMinutes && currentTime < closeMinutes) {
+                    const minutesUntilClose = closeMinutes - currentTime;
+                    return {
+                        isOpen: true,
+                        minutesUntilClose,
+                        message: `We're <span class="text-success">online</span> now, logging off in ${Math.floor(minutesUntilClose / 60)}h ${minutesUntilClose % 60}m.`
+                    };
+                }
+            }
+
+            // Store is closed, find next opening
+            // Flatten all days into a 7-day array with day offset
+            for (let i = 0; i < 7; i++) {
+                const checkDayIndex = (now.getDay() + i) % 7;
+                const checkDay = dayNames[checkDayIndex];
+                const dayIntervals = schedule[checkDay] || [];
+
+                if (dayIntervals.length > 0) {
+                    // Take first interval of that day
+                    const [nextOpenHour, nextOpenMin] = dayIntervals[0].open.split(":").map(Number);
+                    let nextOpenDate = new Date(now);
+                    nextOpenDate.setDate(now.getDate() + i);
+                    nextOpenDate.setHours(nextOpenHour, nextOpenMin, 0, 0);
+
+                    const diffMinutes = Math.round((nextOpenDate - now) / 60000);
+
+                    const hours = Math.floor(diffMinutes / 60);
+                    const minutes = diffMinutes % 60;
+
+                    return {
+                        isOpen: false,
+                        minutesUntilOpen: diffMinutes,
+                        message: `We're <span class="text-danger">offline</span> now, back in ${hours}h ${minutes}m.`
+                    };
+                }
+            }
+
+            // If no intervals at all
+            return {
+                isOpen: false,
+                message: "We're closed all week!"
+            };
+        }
+
+        // Example usage
+        const pantryForgeSchedule = {
+            Sunday: [{ open: "12:00", close: "21:00" }],
+            Monday: [{ open: "16:00", close: "21:00" }],
+            Tuesday: [{ open: "16:00", close: "21:00" }],
+            Wednesday: [{ open: "17:00", close: "21:00" }],
+            Thursday: [{ open: "16:00", close: "21:00" }],
+            Friday: [{ open: "16:00", close: "18:00" }],
+            Saturday: [{ open: "09:00", close: "21:00" }],
+        };
+
+        document.getElementById("openNow").innerHTML = getStoreStatus(pantryForgeSchedule).message;
+    </script>
+
+    <script src="/scripts/dynamic-loader.js"></script>
+</body>
+
+</html>
