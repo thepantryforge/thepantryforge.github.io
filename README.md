@@ -6,10 +6,20 @@ Copyright © 2025 `thepantryforge@gmail.com`. All rights reserved.
 
 For more information, see `LICENSE.md`.
 
-## Site map
+## Sitemap
 Below is a complete sitemap of the **user-viewable** pages for the site. Note that some `.html` files (e.g. `components/*.html`) are loaded into every page automatically by `dynamic-loader.js`, and thus are not included.
 
 - `/` (`index.html`) - Home page
+- `/{non-existent URL}` (`404.html`) - HTTP 404 Error
+- `/about` (`about.html`) - About Us
+- `/coming-soon` (`coming-soon.html`) - Coming Soon
+- `/contact` (`contact.html`) - Contact Us
+- `/faq` (`faq.html`) - FAQs
+- `/guides` (`guides.html`) - Product Guides & Manuals
+- `/returns-policy` (`returns-policy.html`) - Returns Policy
+- `/shipping-and-delivery` (`shipping-and-delivery.html`) - Shipping & Delivery Policy
+- `/sitemap` (`sitemap.html`) - Sitemap
+- `/warranty` (`warranty.html`) - Warranty
 
 ## Template for new pages
 
