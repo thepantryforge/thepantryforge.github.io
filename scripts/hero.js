@@ -46,7 +46,7 @@ function resetImage() {
 
 
 // Enable image rotation on devices with a mouse pointer who are fine with motion
-if (window.matchMedia("(pointer: fine)").matches && !prefersReducedMotion.matches) {
+if (window.matchMedia("(pointer: fine)").matches && image && !prefersReducedMotion.matches) {
     document.body.addEventListener("mousemove", rotateImage);
     document.body.addEventListener("mouseleave", resetImage);
 }
