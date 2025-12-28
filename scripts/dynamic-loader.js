@@ -56,7 +56,7 @@ customElements.define('pf-footer', PantryForgeFooter);
 
 
 // Function to wait for an element on the page to appear
-function waitForElment(selector) {
+function waitForElement(selector) {
   return new Promise(resolve => {
     if (document.querySelector(selector)) {
       return resolve(document.querySelector(selector));
@@ -81,7 +81,7 @@ function waitForElment(selector) {
 
 // Highlight the current nav tab
 async function highlightNavItem() {
-  await waitForElment('a.nav-link');
+  await waitForElement('a.nav-link');
   const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
 
   document.querySelector('nav.navbar').querySelectorAll('a[href]').forEach(link => {
@@ -96,7 +96,7 @@ async function highlightNavItem() {
         done = true;
       }
     } catch (e) {
-      // Ignore malformed hrefs (e.g. "#", "javascript:")
+      // Ignore malformed hypertext references (e.g. "#", "javascript:")
     }
   });
 }
@@ -106,7 +106,7 @@ highlightNavItem();
 
 // Finally, add Bootstrap JS & My JS
 async function addJS() {
-  await waitForElment('pf-footer')
+  await waitForElement('pf-footer')
 
   const bsScript = document.createElement('script');
   bsScript.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js';
