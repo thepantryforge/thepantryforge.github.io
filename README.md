@@ -2,7 +2,7 @@
 
 ## Copyright
 
-Copyright © 2025 `thepantryforge@gmail.com`. All rights reserved.
+Copyright © 2026 `thepantryforge@gmail.com`. All rights reserved.
 
 For more information, see `LICENSE.md`.
 
